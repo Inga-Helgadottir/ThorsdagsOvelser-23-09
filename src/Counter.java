@@ -1,16 +1,15 @@
 public class Counter {
-    private int count;
+    private int count = 0;
 
     public int getCount() {
         return count;
     }
 
     public void addToCount() {
-        this.count++;
+        this.count ++;
     }
 
     public void removeFromCount() {
-        this.count--;
+        this.count --;
     }
-
 }
