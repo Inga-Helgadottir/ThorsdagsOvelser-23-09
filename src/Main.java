@@ -37,12 +37,13 @@ Writing a simple protocol and a matching TCP Server and Client
  Implement a simple Java Monitor-Client
  which constantly must print the current total updated by your telnet clients in the previous step
 
-fileOutputStream, true
+telnet localhost 8080
 */
 public class Main {
-    public int port = 8080;
-    public void main(String[] args) throws IOException {
+    public static int port = 8080;
+    public static void main(String[] args) throws IOException {
         EchoServer es = new EchoServer(port);
+        System.out.println("starting server on port : " + port);
         es.startServer();
     }
 }
