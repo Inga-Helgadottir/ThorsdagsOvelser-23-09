@@ -18,6 +18,7 @@ public class EchoServer {
         while(true){
             System.out.println("Waiting for client");
             Socket s = ss.accept();
+            System.out.println("Welcome client");
             ClientHandler ch = new ClientHandler(s);
             executorService.execute(ch);
         }
