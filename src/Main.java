@@ -42,7 +42,8 @@ telnet localhost 8080
 public class Main {
     public static int port = 8080;
     public static void main(String[] args) throws IOException {
-        EchoServer es = new EchoServer(port);
+        Counter c = new Counter();
+        EchoServer es = new EchoServer(port, c);
         System.out.println("starting server on port : " + port);
         es.startServer();
     }

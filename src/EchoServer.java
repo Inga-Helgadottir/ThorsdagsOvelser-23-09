@@ -7,9 +7,11 @@ import java.util.concurrent.Executors;
 public class EchoServer {
     private int port;
     private ServerSocket ss;
+    private Counter c;
 
-    public EchoServer(int port) {
+    public EchoServer(int port, Counter c) {
         this.port = port;
+        this.c = c;
     }
 
     public void startServer() throws IOException {
@@ -22,5 +24,9 @@ public class EchoServer {
             ClientHandler ch = new ClientHandler(s);
             executorService.execute(ch);
         }
+    }
+
+    public Counter getC() {
+        return c;
     }
 }
